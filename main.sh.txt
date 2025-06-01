@@ -1,21 +1,12 @@
 #!/bin/bash
 
-echo "請選擇鞋碼類型："
-echo "1) 男鞋"
-echo "2) 女鞋"
-read -p "輸入數字選項: " gender_choice
+# 讀第一個參數作為鞋碼類型
+gender=$1
 
-if [ "$gender_choice" = "1" ]; then
-  echo "你選擇了男鞋"
-  read -p "請輸入 US 鞋碼（例如：8.5）: " us_size
-  eu_size=$(echo "$us_size + 33")
-  echo "對應的 EU 尺寸是: $eu_size"
-elif [ "$gender_choice" = "2" ]; then
-  echo "你選擇了女鞋"
-  read -p "請輸入 US 鞋碼（例如：7）: " us_size
-  eu_size=$(echo "$us_size + 31.5")
-  echo "對應的 EU 尺寸是: $eu_size"
-else
+if [ "$gender" != "1" ] && [ "$gender" != "2" ]; then
   echo "輸入錯誤，請輸入 1 或 2"
   exit 1
 fi
+
+echo "你選擇了 $( [ $gender -eq 1 ] && echo 男鞋 || echo 女鞋 )"
+# 其他程式碼...
