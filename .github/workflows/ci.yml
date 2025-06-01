@@ -13,3 +13,12 @@ jobs:
 
       - name: Run shell script
         run: bash main.sh.txt 1
+        
+      - name: Package files
+        run: zip -r shoe-size-converter.zip main.sh other-scripts-folder/
+
+      - name: Upload package
+        uses: actions/upload-artifact@v3
+        with:
+          name: shoe-size-converter-package
+          path: shoe-size-converter.zip
