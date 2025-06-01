@@ -7,18 +7,19 @@ on:
 jobs:
   run-script:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
       - name: Run shell script
         run: bash main.sh.txt 1
-        
+
       - name: Package files
-        run: zip -r shoe-size-converter.zip main.sh
+        run: zip -r shoe-size-converter.zip main.sh.txt
 
       - name: Upload package
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3.1.3
         with:
           name: shoe-size-converter-package
           path: shoe-size-converter.zip
