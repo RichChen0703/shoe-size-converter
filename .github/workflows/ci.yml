@@ -18,7 +18,7 @@ jobs:
         run: zip -r shoe-size-converter.zip main.sh
 
       - name: Upload package
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v2
         with:
           name: shoe-size-converter-package
           path: shoe-size-converter.zip
