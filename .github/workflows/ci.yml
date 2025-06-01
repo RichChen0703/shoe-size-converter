@@ -15,7 +15,7 @@ jobs:
         run: bash main.sh.txt 1
         
       - name: Package files
-        run: zip -r shoe-size-converter.zip main.sh other-scripts-folder/
+        run: zip -r shoe-size-converter.zip main.sh
 
       - name: Upload package
         uses: actions/upload-artifact@v3
