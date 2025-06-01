@@ -1,0 +1,16 @@
+# 忽略常見的編輯器暫存檔
+*~
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# 忽略 macOS 系統檔案
+.DS_Store
+
+# 忽略 log 檔案
+*.log
+
+# 忽略執行檔或輸出檔
+*.out
+*.exe
